@@ -5,6 +5,34 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇸🇨 SC 01 - xiaohe
+  type: vless
+  server: 104.21.22.180
+  port: 443
+  uuid: 33918b20-9e02-4dc6-8b30-79b2d4b2e0e6
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: auto-scale-238b2b.infra-core-1630dd.workers.dev
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiUjJBU3JkVlRwSWtnciIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbImJwYi55b3VzZWYuaXNlZ2Fyby5jb20iXX0
+    headers:
+      Host: auto-scale-238b2b.infra-core-1630dd.workers.dev
+- name: 🇸🇨 SC 02 - xiaohe
+  type: vless
+  server: 188.114.96.3
+  port: 2087
+  uuid: 756e8f39-04e8-436d-b5c6-905d37d9562c
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: ez-98919a.motoricb.workers.dev
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiR1BxUFhYR0w1TlBLMTRsIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ
+    headers:
+      Host: ez-98919a.motoricb.workers.dev
+- name: 🇸🇨 SC 03 - xiaohe
   type: vmess
   server: 156.226.183.181
   port: 54321
@@ -14,17 +42,97 @@ proxies:
   udp: true
   tls: false
   skip-cert-verify: true
+- name: 🇸🇨 SC 04 - xiaohe
+  type: vless
+  server: 172.67.151.77
+  port: 443
+  uuid: 73796e63-0000-4000-8000-000000000000
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: nahan-core.fatitelegram.workers.dev
+  network: ws
+  ws-opts:
+    path: /sync
+    headers:
+      Host: nahan-core.fatitelegram.workers.dev
+- name: 🇸🇨 SC 05 - xiaohe
+  type: vmess
+  server: 156.226.183.181
+  port: 54321
+  uuid: d3bcc1f1-6294-4f68-bcf3-c3bcb2001520
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- name: 🇸🇨 SC 06 - xiaohe
+  type: vless
+  server: 188.114.97.8
+  port: 8443
+  uuid: d4d2d3f3-9dec-4e8f-8daf-145ecac96e66
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: cRIMSON-LeAf-7E45.hzhdUuEBFjDCB.workERs.DEv
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiODgwQ1AwWDV0MnFTRWE1cCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: crimson-leaf-7e45.hzhduuebfjdcb.workers.dev
+- name: 🇸🇨 SC 07 - xiaohe
+  type: vless
+  server: 45.130.125.96
+  port: 443
+  uuid: 28607fa7-db30-47d6-942a-f5744e4be9ad
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: dfsuporte.garena.com.ex33r.eu.cc
+  network: ws
+  ws-opts:
+    path: /id-pusat
+    headers:
+      Host: dfsuporte.garena.com.ex33r.eu.cc
+- name: 🇸🇨 SC 08 - xiaohe
+  type: vless
+  server: 104.21.3.133
+  port: 2083
+  uuid: 2b8738de-1af5-4267-b101-c05707769ed4
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: fans.liverpool.qzz.io
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiY0Y0cENQUmxsNyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+    headers:
+      Host: fans.liverpool.qzz.io
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇸🇨 SC 01 - xiaohe
+  - 🇸🇨 SC 02 - xiaohe
+  - 🇸🇨 SC 03 - xiaohe
+  - 🇸🇨 SC 04 - xiaohe
+  - 🇸🇨 SC 05 - xiaohe
+  - 🇸🇨 SC 06 - xiaohe
+  - 🇸🇨 SC 07 - xiaohe
+  - 🇸🇨 SC 08 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇸🇨 SC 01 - xiaohe
+  - 🇸🇨 SC 02 - xiaohe
+  - 🇸🇨 SC 03 - xiaohe
+  - 🇸🇨 SC 04 - xiaohe
+  - 🇸🇨 SC 05 - xiaohe
+  - 🇸🇨 SC 06 - xiaohe
+  - 🇸🇨 SC 07 - xiaohe
+  - 🇸🇨 SC 08 - xiaohe
 rules:
 - MATCH,PROXIES
